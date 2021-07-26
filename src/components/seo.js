@@ -2,6 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 import socialImg from 'assets/social.png'
 
+const getAbsoluteURL = (path) => {
+  const baseURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+  return baseURL + path
+}
+
 export default function SEO({
   description = 'Top Quality Digital Products to Explore - Check out our website to find great software products and deals! If you need a website or a web application this is the place to be!',
   author = 'Matheus Mitestainer',
@@ -15,7 +20,7 @@ export default function SEO({
     },
     {
       property: `og:image`,
-      content: socialImg,
+      content: getAbsoluteURL(socialImg),
     },
     {
       property: `og:title`,
@@ -39,7 +44,7 @@ export default function SEO({
     },
     {
       property: `twitter:image`,
-      content: socialImg,
+      content: getAbsoluteURL(socialImg),
     },
     {
       property: `twitter:title`,
