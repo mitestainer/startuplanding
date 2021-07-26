@@ -3,7 +3,7 @@ import Head from 'next/head';
 import socialImg from 'assets/social.png'
 
 const getAbsoluteURL = (path) => {
-  const baseURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+  const baseURL = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : "http://localhost:3000"
   return baseURL + path
 }
 
